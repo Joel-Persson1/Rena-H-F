@@ -5,6 +5,13 @@ import heroImage from "../assets/hero-image.jpg";
 import { Button } from "./ui/button";
 
 const Hero = () => {
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <section className="relative min-h-screen flex items-center" id="hem">
       {/* Background Image */}
@@ -42,7 +49,7 @@ const Hero = () => {
             <Button
               variant="hero"
               size="hero"
-              onClick={() => {}}
+              onClick={() => scrollToSection("tjanster")}
               className="flex-1 sm:flex-none"
             >
               Kolla Vårt Utbud
@@ -50,7 +57,7 @@ const Hero = () => {
             <Button
               variant="light"
               size="hero"
-              onClick={() => {}}
+              onClick={() => scrollToSection("kontakt")}
               className="flex-1 sm:flex-none bg-transparent"
             >
               Kontakta Oss
